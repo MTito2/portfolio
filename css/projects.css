@@ -137,3 +137,27 @@ main {
 .links-desc:hover {
     text-decoration: underline;
 }
+
+.btn-chevron {
+    padding: 10px;
+    border: none;
+    background: inherit;
+}
+
+.btn-chevron:hover {
+    cursor: pointer;
+}
+
+.btn-chevron:active {
+    transform: scale(0.9);
+}
+
+.btn-icon {
+    width: 40px;
+}
+.content-wrap {
+    display: flex;
+    align-items: center;
+}
+
+

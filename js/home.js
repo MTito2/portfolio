@@ -1,3 +1,5 @@
+const btnTalkEl = document.getElementById("btnTalk")
+
 const projectsItem = document.querySelectorAll(".projects__item")
 const pageList = new Array
 const actuallyPage = window.location.pathname.replace("/", "")
@@ -38,3 +40,7 @@ projectsItem.forEach(element => {
 
     })
 });
+
+btnTalkEl.addEventListener("click", () => {
+    window.open("https://wa.me/5531971295631?text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20projetos%2C%20oportunidades%20ou%20ideias.");
+})

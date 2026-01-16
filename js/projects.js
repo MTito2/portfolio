@@ -7,6 +7,8 @@ const currentPath = window.location.pathname
 const currentPage = currentPath.split("/").at(-1)
 const currentPageIndex = projectPages.indexOf(currentPage)
 
+const projectNumberEl = document.getElementById("project-number")
+
 prevBtn.addEventListener("click", () => {
     acessPreviusPage()
 })
@@ -40,3 +42,10 @@ function acessNextPage() {
 
     window.location.href = path;
 }
+
+function showProjectNumber() {
+    const content = `${currentPageIndex + 1} / ${projectNumbers}`
+    projectNumberEl.textContent = content
+}
+
+showProjectNumber()

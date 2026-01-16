@@ -160,4 +160,10 @@ main {
     align-items: center;
 }
 
+.project-number {
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 

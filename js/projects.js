@@ -31,7 +31,7 @@ function acessPreviusPage() {
     }
     
     const previusProjectPage = projectPages[previusIndex]
-    const path = "/projects/" + previusProjectPage
+    const path = "../projects/" + previusProjectPage
 
     window.location.href = path;
 }
@@ -44,7 +44,7 @@ function acessNextPage() {
     }
     
     const nextProjectPage = projectPages[nextIndex]
-    const path = "/projects/" + nextProjectPage
+    const path = "../projects/" + nextProjectPage
 
     window.location.href = path;
 }

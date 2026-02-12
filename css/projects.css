@@ -177,19 +177,19 @@ main {
 
 @media (max-width: 480px) {
     main {
-        width: 93%;
+        width: 95%;
     }
 
     p {
-        font-size: 12px;
+        font-size: 10px;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 18px;
     }
 
     h2 {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .content-wrap{
@@ -197,11 +197,12 @@ main {
     }
 
     .container {
-        padding: 0;
+        padding: 5px;
     }
 
     .title-content {
-        width: 100%;
+        width: 98%;
+        margin: auto;
     }
 
     .content-group {
@@ -212,7 +213,7 @@ main {
     .text-content-1 {
         width: 100%;
         gap: 5px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
 
     .text-content-2 {
@@ -225,12 +226,12 @@ main {
     }
 
     .links-container {
-        padding-top: 30px;  
+        padding-top: 15px;  
     }
 
     .project-img {
-        width: 100%;
-        height: 100%;
+        width: 70%;
+        height: 70%;
         position: relative;
     }
 

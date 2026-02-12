@@ -18,23 +18,13 @@ function createMenuContainer() {
     items.forEach(item => {
         const menuItem = document.createElement("li")
         menuItem.className = "hero__menu-item"
+
         menuItem.textContent = item
-
-        menuItem.addEventListener("click", () => {
-            let targetId = ""
-
-            if (item === "Sobre") targetId = "#about"
-            if (item === "Projetos") targetId = "#projects"
-            if (item === "Contato") targetId = "#contact"
-
-            const section = document.querySelector(targetId)
-            section.scrollIntoView({ behavior: "smooth" })
-        })
-
         menuList.appendChild(menuItem)
     })
 
     menuContainer.appendChild(menuList)
+
     return menuContainer
 }
 

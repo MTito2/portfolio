@@ -1,8 +1,10 @@
+const menuEl = document.querySelector(".header-menu")
+const main = document.querySelector(".main")
+
 const prevBtn = document.getElementById("prev-project")
 const nextBtn = document.getElementById("next-project")
 
 const projectPages = JSON.parse(localStorage.getItem("page_projects")) || []
-console.log(projectPages)
 
 if (!projectPages.length) {
     console.warn("Lista de projetos vazia")
@@ -15,6 +17,14 @@ const currentPageIndex = projectPages.indexOf(currentPage)
 
 const projectNumberEl = document.getElementById("project-number")
 
+
+const menuContainer = createMenuContainer()
+main.appendChild(menuContainer) 
+
+menuEl.addEventListener("click", () => {
+    menuContainer.classList.toggle("header-menu-container-show")
+})
+
 prevBtn?.addEventListener("click", () => {
     acessPreviusPage()
 })
@@ -22,6 +32,38 @@ prevBtn?.addEventListener("click", () => {
 nextBtn?.addEventListener("click", () => {
     acessNextPage()
 })
+
+function createMenuContainer() {
+    const menuContainer = document.createElement("div")
+    const menuList = document.createElement("ul")
+    const items = ["Home", "Sobre", "Projetos", "Contato"]
+    
+    menuContainer.className = "header-menu-container"
+    menuList.className = "header-menu-list" 
+    
+    items.forEach(item => {
+        const menuItem = document.createElement("li")
+        menuItem.className = "header-menu-item"
+        menuItem.textContent = item
+
+        menuItem.addEventListener("click", () => {
+            let targetId = ""
+
+            if (item === "Home") targetId = "#hero"
+            if (item === "Sobre") targetId = "#about"
+            if (item === "Projetos") targetId = "#projects"
+            if (item === "Contato") targetId = "#contact"
+
+            const section = document.querySelector(targetId)
+            section.scrollIntoView({ behavior: "smooth" })
+        })
+
+        menuList.appendChild(menuItem)
+    })
+
+    menuContainer.appendChild(menuList)
+    return menuContainer
+}
 
 function acessPreviusPage() {
     let previusIndex = currentPageIndex - 1

@@ -17,7 +17,7 @@ const currentPageIndex = projectPages.indexOf(currentPage)
 
 const projectNumberEl = document.getElementById("project-number")
 
-
+// Cria menu
 const menuContainer = createMenuContainer()
 main.appendChild(menuContainer) 
 
@@ -36,26 +36,32 @@ nextBtn?.addEventListener("click", () => {
 function createMenuContainer() {
     const menuContainer = document.createElement("div")
     const menuList = document.createElement("ul")
-    const items = ["Home", "Sobre", "Projetos", "Contato"]
-    
+
+    const items = {
+        "Home": "hero",
+        "Sobre": "about",
+        "Projetos": "projects",
+        "Contato": "contact"
+    }
+
     menuContainer.className = "header-menu-container"
-    menuList.className = "header-menu-list" 
-    
-    items.forEach(item => {
+    menuList.className = "header-menu-list"
+
+    const isInsideProjects = window.location.pathname
+        .split("/")
+        .includes("projects")
+
+    Object.entries(items).forEach(([label, id]) => {
         const menuItem = document.createElement("li")
         menuItem.className = "header-menu-item"
-        menuItem.textContent = item
+        menuItem.textContent = label
 
         menuItem.addEventListener("click", () => {
-            let targetId = ""
+            const target = isInsideProjects
+                ? "../index.html#" + id
+                : "./index.html#" + id
 
-            if (item === "Home") targetId = "#hero"
-            if (item === "Sobre") targetId = "#about"
-            if (item === "Projetos") targetId = "#projects"
-            if (item === "Contato") targetId = "#contact"
-
-            const section = document.querySelector(targetId)
-            section.scrollIntoView({ behavior: "smooth" })
+            window.location.href = target
         })
 
         menuList.appendChild(menuItem)
@@ -65,29 +71,22 @@ function createMenuContainer() {
     return menuContainer
 }
 
+
 function acessPreviusPage() {
     let previusIndex = currentPageIndex - 1
+    if (previusIndex < 0) previusIndex = projectNumbers - 1 
 
-    if (previusIndex < 0) {
-        previusIndex = projectNumbers - 1 
-    }
-    
     const previusProjectPage = projectPages[previusIndex]
     const path = "../projects/" + previusProjectPage
-
     window.location.href = path;
 }
 
 function acessNextPage() {
     let nextIndex = currentPageIndex + 1
+    if (nextIndex > (projectNumbers - 1)) nextIndex = 0 
 
-    if (nextIndex > (projectNumbers - 1)) {
-        nextIndex = 0 
-    }
-    
     const nextProjectPage = projectPages[nextIndex]
     const path = "../projects/" + nextProjectPage
-
     window.location.href = path;
 }
 

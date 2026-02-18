@@ -575,6 +575,10 @@ main {
         background: #bdbdbd;
     }
 
+    .hero__menu-item:hover {
+        cursor: pointer;
+    }
+
     .hero__icons {
         display: none;
     }

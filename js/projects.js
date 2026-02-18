@@ -25,6 +25,13 @@ menuEl.addEventListener("click", () => {
     menuContainer.classList.toggle("header-menu-container-show")
 })
 
+document.addEventListener("click", (event) => {
+    if (!menuContainer.contains(event.target) &&
+    !menuEl.contains(event.target)) {
+        menuContainer.classList.remove("header-menu-container-show")
+    }
+})
+
 prevBtn?.addEventListener("click", () => {
     acessPreviusPage()
 })
@@ -62,6 +69,8 @@ function createMenuContainer() {
                 : "./index.html#" + id
 
             window.location.href = target
+            menuContainer.classList.remove("header-menu-container-show")
+            
         })
 
         menuList.appendChild(menuItem)

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Message Sent</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #F2F0EE;
+    font-family: "Roboto", sans-serif;
+    color: #58595B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+p {
+    font-size: 15px;
+}
+
+.button {
+    margin: 10px auto 0;
+    padding: 14px 30px;
+    background: #0D3065;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button:hover {
+    background: #083881;
+    cursor: pointer;
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+/* Responsivo */
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    p {
+        font-size: 13px;
+    }
+
+    .button {
+        padding: 10px 22px;
+        font-size: 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Mensagem enviada com sucesso!</h1>
+    <p>Obrigado por entrar em contato. Retornarei em breve.</p>
+
+    <a href="./index.html" class="button">
+        Voltar ao início
+    </a>
+</div>
+
+</body>
+</html>
